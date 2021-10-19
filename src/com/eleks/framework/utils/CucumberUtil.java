@@ -30,6 +30,7 @@ public class CucumberUtil {
     }
 
     private static class DataCollection {
+        
         private String columnName;
         private String columnValue;
         private int rowNumber;
