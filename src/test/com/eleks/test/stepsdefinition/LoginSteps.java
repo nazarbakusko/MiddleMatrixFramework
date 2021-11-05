@@ -1,6 +1,7 @@
 package com.eleks.test.stepsdefinition;
 
 import com.eleks.framework.base.Base;
+import com.eleks.framework.base.DriverContext;
 import com.eleks.framework.utils.ExcelUtil;
 import com.eleks.test.page.HomePage;
 import com.eleks.test.page.LoginPage;
@@ -24,11 +25,9 @@ public class LoginSteps extends Base {
 
     @Step("I click login link")
     @Then("I click login link")
-    public void iClickLoginLink() throws InterruptedException {
+    public void iClickLoginLink() {
         //Navigation to login page
         CurrentPage = CurrentPage.as(HomePage.class).clickLogin();
-        //TODO
-        Thread.sleep(3000);
     }
 
     @Step("I enter UserName and Password")
@@ -41,10 +40,9 @@ public class LoginSteps extends Base {
     @Step("I click login button")
     @Then("I click login button")
     public void iClickLoginButton() throws InterruptedException {
-        //Navigation tot home page
+        //Navigation to home page
         CurrentPage = CurrentPage.as(LoginPage.class).clickLoginM();
-        //TODO
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 
     @Step("I should see the username with hello")

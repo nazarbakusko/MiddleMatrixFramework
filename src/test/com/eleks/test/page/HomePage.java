@@ -1,6 +1,7 @@
 package com.eleks.test.page;
 
 import com.eleks.framework.base.BasePage;
+import com.eleks.framework.base.DriverContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -20,6 +21,7 @@ public class HomePage extends BasePage {
     public WebElement lnkUserName;
 
     public LoginPage clickLogin() {
+        DriverContext.waitForElementVisible(lnkLogin);
         lnkLogin.click();
         return getInstance(LoginPage.class);
     }
@@ -33,6 +35,7 @@ public class HomePage extends BasePage {
     }
 
     public EmployeeListPage clickEmployeeList() {
+        DriverContext.waitForElementVisible(lnkEmployeeList);
         lnkEmployeeList.click();
         return getInstance(EmployeeListPage.class);
     }

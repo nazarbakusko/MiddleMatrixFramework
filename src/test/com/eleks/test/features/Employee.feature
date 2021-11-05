@@ -14,4 +14,5 @@ Feature: Employee
     And I enter following details
       | Name     | Salary | DurationWorked | Grade | Email           |
       | AutoUser | 4000   | 30             | 1     | autouser@ea.com |
+      | AutoUser1 | 5000   | 40             | 2     | autouser1@ea.com |
     And I click create button

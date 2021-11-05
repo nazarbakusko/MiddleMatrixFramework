@@ -1,6 +1,7 @@
 package com.eleks.test.page;
 
 import com.eleks.framework.base.BasePage;
+import com.eleks.framework.base.DriverContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -26,10 +27,12 @@ public class CreateEmployeePage extends BasePage {
     public WebElement btnCreateEmployee;
 
     public void clickCreateButton() {
+        DriverContext.waitForElementVisible(btnCreateEmployee);
         btnCreateEmployee.click();
     }
 
     public void createEmployee(String name, String salary, String duration, String grade, String email) {
+        DriverContext.waitForElementVisible(txtEmail);
         txtName.sendKeys(name);
         txtSalary.sendKeys(salary);
         txtDurationWorked.sendKeys(duration);

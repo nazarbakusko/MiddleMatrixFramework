@@ -49,15 +49,15 @@ public class LoginPage extends BasePage {
         textPass.enterText(password);
     }
 
-    public HomePage clickLogin() {
+    public HomePage clickLoginM() {
         btnLogin.submit();
         return getInstance(HomePage.class);
     }
 
     //Modified
-    public HomePage clickLoginM() {
-        Button btn = new ButtonBase(btnLoginM);
-        btn.performSubmit();
-        return getInstance(HomePage.class);
-    }
+//    public HomePage clickLoginM() {
+//        Button btn = new ButtonBase(btnLoginM);
+//        btn.performSubmit();
+//        return getInstance(HomePage.class);
+//    }
 }
