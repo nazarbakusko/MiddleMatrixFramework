@@ -7,6 +7,7 @@ import com.eleks.test.page.HomePage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -14,18 +15,21 @@ import static com.eleks.framework.base.Base.CurrentPage;
 
 public class EmployeeSteps {
 
+    @Step("I click employeeList link")
     @And("I click employeeList link")
     public void iClickEmployeeListLink() throws InterruptedException {
         CurrentPage = CurrentPage.as(HomePage.class).clickEmployeeList();
         Thread.sleep(3000);
     }
 
+    @Step("I click create new btn")
     @Then("I click create new btn")
     public void iClickCreateNewBtn() throws InterruptedException {
         CurrentPage = CurrentPage.as(EmployeeListPage.class).clickCreateNew();
         Thread.sleep(3000);
     }
 
+    @Step("I enter following details")
     @And("I enter following details")
     public void iEnterFollowingDetails(DataTable table) throws InterruptedException {
         //List<List<String>> cells = table.cells();
@@ -40,6 +44,7 @@ public class EmployeeSteps {
         Thread.sleep(3000);
     }
 
+    @Step("I click create button")
     @And("I click create button")
     public void iClickCreateButton() throws InterruptedException {
         CurrentPage.as(CreateEmployeePage.class).clickCreateButton();

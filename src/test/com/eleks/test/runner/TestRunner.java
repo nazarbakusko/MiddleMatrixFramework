@@ -1,11 +1,13 @@
 package com.eleks.test.runner;
 
-import io.cucumber.testng.CucumberOptions;
-import io.cucumber.testng.FeatureWrapper;
-import io.cucumber.testng.PickleWrapper;
-import io.cucumber.testng.TestNGCucumberRunner;
+import com.eleks.framework.utils.ListenerUtil;
+import io.cucumber.testng.*;
+import io.qameta.allure.Description;
 import org.testng.annotations.*;
 
+import java.util.List;
+
+@Listeners({ListenerUtil.class})
 @CucumberOptions(features = {"src/test/com/eleks/test/features/"}, glue = {"com/eleks/test/stepsdefinition"}, plugin = {"pretty"})
 public class TestRunner {
 
@@ -16,7 +18,8 @@ public class TestRunner {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
-    @Test(description = "Runs Cucumber Scenarios", dataProvider = "features")
+    @Test(description = "Runs Cucumber Scenarios", dataProvider = "features", priority = 1)
+    @Description("Runs two Cucumber Scenarios")
     public void runTests(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
         testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
     }
