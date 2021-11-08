@@ -18,8 +18,10 @@
 .idea/libraries
 
 # Folders:
-target/
 allure-results/
+logs/
+target/
+
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
