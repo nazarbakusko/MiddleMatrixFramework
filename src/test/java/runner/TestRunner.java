@@ -16,9 +16,15 @@ public class TestRunner {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
-    @Test(description = "Runs Cucumber Scenarios", dataProvider = "features", priority = 1)
-    @Description("Runs two Cucumber Scenarios")
-    public void runTests(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
+    @Test(description = "Create Employee with all details", dataProvider = "features", priority = 1, testName = "@EmployeeTest")
+    @Description("Create Employee with all details")
+    public void verifyCreateEmployeeWithAllDetails(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
+        testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
+    }
+
+    @Test(description = "Check Login with correct username and password", dataProvider = "features", priority = 1, testName = "@LoginTest")
+    @Description("Check Login with correct username and password")
+    public void verifyLoginWithCorrectUsernameAndPassword(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
         testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
     }
 

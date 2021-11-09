@@ -1,3 +1,4 @@
+@EmployeeTest
 Feature: Employee
   Responsible for verifying Benefits, Create Employee,
   Delete employee and check if the functionality works

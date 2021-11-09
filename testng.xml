@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite1">
-    <test name="test1">
+<suite name="Suite1" parallel="tests">
+    <test name="test1" parallel="methods">
         <classes>
             <class name="runner.TestRunner">
                 <methods>
-                    <include name="runTests"/>
+                    <include name="verifyCreateEmployeeWithAllDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test2" parallel="methods">
+        <classes>
+            <class name="runner.TestRunner">
+                <methods>
+                    <include name="verifyLoginWithCorrectUsernameAndPassword"/>
                 </methods>
             </class>
         </classes>
