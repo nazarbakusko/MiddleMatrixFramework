@@ -12,10 +12,6 @@ public class Browser extends Base {
         _driver = driver;
     }
 
-    public void goToUrl(String url) {
-        _driver.get(url);
-    }
-
     public void maximizeWindow() {
         _driver.manage().window().maximize();
     }

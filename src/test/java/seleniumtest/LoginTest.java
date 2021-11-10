@@ -1,12 +1,13 @@
 package seleniumtest;
 
+import com.eleks.framework.base.Base;
 import com.eleks.framework.utils.ExcelUtil;
 import page.HomePage;
 import page.LoginPage;
-import stepsdefinition.BaseTest;
+//import stepsdefinition.BaseTest;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends Base {
 
     @Test
     public void TC_VerifyLogin() throws InterruptedException {

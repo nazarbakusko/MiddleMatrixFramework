@@ -30,7 +30,7 @@ public class BaseTest extends FrameworkInitialize {
 
         initializeBrowser(Settings.browserType);
         Settings.log.write("Browser initialized");
-        DriverContext.browser.goToUrl(Settings.aut);
+        DriverContext.goToUrl(Settings.aut);
         Settings.log.write("Navigated to URL");
         ExcelUtil.initializeExcelFile(Settings.excelSheetPath, "Sheet1");
     }

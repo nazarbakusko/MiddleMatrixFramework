@@ -32,6 +32,8 @@ public class ConfigReader {
         Settings.aut = prop.getProperty("aut");
         //Get browser Type
         Settings.browserType = BrowserType.valueOf(prop.getProperty("browserType"));
+        //Hub
+        Settings.seleniumGridHub = prop.getProperty("seleniumGridHub");
         //Get log
         //Settings.log = LogUtilprop.getProperty("log"));
 

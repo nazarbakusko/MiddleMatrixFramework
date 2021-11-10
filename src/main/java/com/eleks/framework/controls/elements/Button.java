@@ -7,5 +7,7 @@ public interface Button extends Control {
     void performClick();
     void performSubmit();
     String getButtonText();
-
+    void Wait();
+    void WaitForVisible();
+    void ClickBtn();
 }

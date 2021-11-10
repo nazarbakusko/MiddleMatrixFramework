@@ -3,6 +3,7 @@ package com.eleks.framework.utils;
 import com.eleks.framework.base.Base;
 import com.eleks.framework.base.DriverContext;
 import com.eleks.framework.base.FrameworkInitialize;
+import com.eleks.framework.base.LocalDriverContext;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -29,7 +30,7 @@ public class ListenerUtil extends Base implements ITestListener {
         System.out.println("I am on failure method");
 
         //Get driver from BaseTest and assign to local webdriver variable.Object testClass = iTestResult.getInstance();
-        WebDriver driver = DriverContext.Driver;
+        WebDriver driver = LocalDriverContext.getRemoteWebDriver();
 
         //Allure ScreenShotRobot and Save TestLog
         if (driver instanceof WebDriver) {

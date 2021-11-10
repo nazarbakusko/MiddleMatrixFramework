@@ -27,6 +27,7 @@ public class CreateEmployeePage extends BasePage {
     public WebElement btnCreateEmployee;
 
     public void clickCreateButton() {
+        DriverContext.waitForPageToLoad();
         DriverContext.waitForElementVisible(btnCreateEmployee);
         btnCreateEmployee.click();
     }

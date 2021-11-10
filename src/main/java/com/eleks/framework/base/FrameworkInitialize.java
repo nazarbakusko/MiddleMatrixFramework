@@ -1,5 +1,6 @@
 package com.eleks.framework.base;
 
+import com.eleks.framework.config.Settings;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,17 +16,19 @@ public class FrameworkInitialize extends Base {
 
     public void initializeBrowser(BrowserType browserType) throws MalformedURLException {
 
-        WebDriver driver = null;
+        RemoteWebDriver driver = null;
         switch (browserType) {
             case Chrome:
                 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
                 DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
-                driver = new RemoteWebDriver(new URL("http://192.168.0.139:4444/wd/hub"), capabilities);
+                driver = new RemoteWebDriver(new URL(Settings.seleniumGridHub), capabilities);
+                LocalDriverContext.setRemoteWebDriverThreadLocal(driver);
                 break;
             case Firefox:
                 System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
                 DesiredCapabilities capabilities1 = new DesiredCapabilities().firefox();
-                driver = new RemoteWebDriver(new URL("http://192.168.0.139:4444/wd/hub"), capabilities1);
+                driver = new RemoteWebDriver(new URL(Settings.seleniumGridHub), capabilities1);
+                LocalDriverContext.setRemoteWebDriverThreadLocal(driver);
                 break;
             case IE:
                 driver = new InternetExplorerDriver();
@@ -34,10 +37,7 @@ public class FrameworkInitialize extends Base {
                 driver = new OperaDriver();
                 break;
         }
-        //Set the driver
-        DriverContext.setDriver(driver);
-        //Set the browser
-        DriverContext.browser = new Browser(driver);
+
     }
 
 }

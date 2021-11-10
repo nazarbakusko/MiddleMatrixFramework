@@ -1,6 +1,7 @@
 package page;
 
 import com.eleks.framework.base.BasePage;
+import com.eleks.framework.controls.elements.ButtonBase;
 import com.eleks.framework.base.DriverContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

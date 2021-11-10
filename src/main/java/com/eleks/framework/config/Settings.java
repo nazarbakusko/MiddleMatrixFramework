@@ -15,6 +15,7 @@ public class Settings {
     public static String driverType;
     public static String excelSheetPath;
     public static String aut;
+    public static String seleniumGridHub;
     //BrowserType
     public static BrowserType browserType;
     //Logs
