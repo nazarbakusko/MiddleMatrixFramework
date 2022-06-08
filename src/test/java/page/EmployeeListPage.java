@@ -1,6 +1,8 @@
 package page;
 
 import com.eleks.framework.base.BasePage;
+import com.eleks.framework.controls.elements.Button;
+import com.eleks.framework.controls.elements.ButtonBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -20,7 +22,8 @@ public class EmployeeListPage extends BasePage {
     public WebElement tblEmployeeList;
 
     public CreateEmployeePage clickCreateNew() {
-        lnkCreateNew.click();
+        Button lnkCreateNewBtn = new ButtonBase(lnkCreateNew);
+        lnkCreateNewBtn.performClick();
         return getInstance(CreateEmployeePage.class);
     }
 

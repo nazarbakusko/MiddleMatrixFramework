@@ -1,11 +1,13 @@
 package page;
 
 import com.eleks.framework.base.BasePage;
-import com.eleks.framework.controls.elements.ButtonBase;
 import com.eleks.framework.base.DriverContext;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import java.util.List;
 
 public class HomePage extends BasePage {
 
@@ -20,6 +22,13 @@ public class HomePage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "//a[@title = 'Manage']")
     public WebElement lnkUserName;
+
+    @FindBy(how = How.LINK_TEXT, using = "Manage Users")
+    public WebElement lnkManageUsers;
+
+    @FindAll(@FindBy(how = How.XPATH, using = "//a[contains(text(), '')]"))
+    List<WebElement> navHeaderElements;
+
 
     public LoginPage clickLogin() {
         DriverContext.waitForElementVisible(lnkLogin);
@@ -40,4 +49,13 @@ public class HomePage extends BasePage {
         lnkEmployeeList.click();
         return getInstance(EmployeeListPage.class);
     }
+
+    public ManageUsersPage clickManageUsers() {
+        DriverContext.waitForElementVisible(lnkManageUsers);
+        lnkManageUsers.click();
+        return getInstance(ManageUsersPage.class);
+    }
+
 }
+
+

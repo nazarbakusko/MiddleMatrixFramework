@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Browser extends Base {
 
-    private WebDriver _driver;
+    private final WebDriver _driver;
 
     public BrowserType type;
 
@@ -14,6 +14,10 @@ public class Browser extends Base {
 
     public void maximizeWindow() {
         _driver.manage().window().maximize();
+    }
+
+    public void quitBrowser() {
+        _driver.quit();
     }
 
 }

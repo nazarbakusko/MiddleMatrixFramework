@@ -1,5 +1,7 @@
 package com.eleks.framework.controls.internals;
 
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Coordinates;
 
@@ -8,6 +10,7 @@ import java.util.List;
 public class ControlBase implements Control {
 
     private final WebElement element;
+    private static final Logger LOGGER = Logger.getLogger(ControlBase.class);
 
     public ControlBase(WebElement element) {
         this.element = element;
@@ -16,11 +19,13 @@ public class ControlBase implements Control {
     @Override
     public void click() {
         element.click();
+        LOGGER.debug("Performed click");
     }
 
     @Override
     public void submit() {
         element.submit();
+        LOGGER.debug("Performed submitting");
     }
 
     @Override
@@ -31,6 +36,7 @@ public class ControlBase implements Control {
     @Override
     public void clear() {
         element.clear();
+        LOGGER.info("The field is cleared");
     }
 
     @Override
@@ -106,5 +112,10 @@ public class ControlBase implements Control {
     @Override
     public Coordinates getCoordinates() {
         return getCoordinates();
+    }
+
+    @Override
+    public boolean elementWired() {
+        return (element != null);
     }
 }

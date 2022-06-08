@@ -1,14 +1,14 @@
 package stepsdefinition;
 
 import com.eleks.framework.base.Base;
-import page.HomePage;
-import page.LoginPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
 import org.junit.Assert;
+import page.HomePage;
+import page.LoginPage;
 
 import java.util.List;
 

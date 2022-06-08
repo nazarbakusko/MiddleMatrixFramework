@@ -50,4 +50,8 @@ public class DriverContext {
         WebDriverWait wait = new WebDriverWait(LocalDriverContext.getRemoteWebDriver(), 30);
         wait.until(webDriver -> webDriver.findElement(elementFindBy).isEnabled());
     }
+
+    public static void quitBrowser() {
+        LocalDriverContext.getRemoteWebDriver().quit();
+    }
 }

@@ -20,4 +20,14 @@ public class Settings {
     public static BrowserType browserType;
     //Logs
     public static LogUtil log;
+    //Video
+    public static String videoFolder;
+    public static String videoEnabled;
+    public static String videoMode;
+    public static String recorderType;
+    public static String videoSaveMode;
+    public static String videoFrameRate;
+    public static String ffmpegFormat;
+    public static String ffmpegDisplay;
+    public static String ffmpegPixelFormat;
 }

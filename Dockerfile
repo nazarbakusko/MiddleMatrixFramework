@@ -7,7 +7,7 @@ COPY src C:/Users/nazarii.bakusko/IdeaProjects/MiddleMatrixFramework/src
 COPY pom.xml C:/Users/nazarii.bakusko/IdeaProjects/MiddleMatrixFramework
 
 # copying testng.xml of my framework
-COPY testng.xml C:/Users/nazarii.bakusko/IdeaProjects/MiddleMatrixFramework
+COPY src/test/java/testng.xml C:/Users/nazarii.bakusko/IdeaProjects/MiddleMatrixFramework
 
 # running the actual command
 RUN mvn -f C:/Users/nazarii.bakusko/IdeaProjects/MiddleMatrixFramework/pom.xml clean test -DskipTests=true

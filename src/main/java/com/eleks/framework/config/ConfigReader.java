@@ -1,11 +1,9 @@
 package com.eleks.framework.config;
 
 import com.eleks.framework.base.BrowserType;
-import com.eleks.framework.utils.LogUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -34,6 +32,16 @@ public class ConfigReader {
         Settings.browserType = BrowserType.valueOf(prop.getProperty("browserType"));
         //Hub
         Settings.seleniumGridHub = prop.getProperty("seleniumGridHub");
+        //Video
+        Settings.videoFolder = prop.getProperty("videoFolder");
+        Settings.videoEnabled = prop.getProperty("videoEnabled");
+        Settings.videoMode = prop.getProperty("videoMode");
+        Settings.recorderType = prop.getProperty("recorderType");
+        Settings.videoSaveMode = prop.getProperty("videoSaveMode");
+        Settings.videoFrameRate = prop.getProperty("videoFrameRate");
+        Settings.ffmpegFormat = prop.getProperty("ffmpegFormat");
+        Settings.ffmpegDisplay = prop.getProperty("ffmpegDisplay");
+        Settings.ffmpegPixelFormat = prop.getProperty("ffmpegPixelFormat");
         //Get log
         //Settings.log = LogUtilprop.getProperty("log"));
 
